@@ -1,0 +1,27 @@
+{
+  "name": "omw-client",
+  "version": "0.0.1",
+  "description": "OMW Client",
+  "main": "index.js",
+  "scripts": {
+    "test": "make test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eib/omw-client.git"
+  },
+  "keywords": [
+    "OMW"
+  ],
+  "author": "Ethan Blackwelder <ethan@eblackwelder.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/eib/omw-client/issues"
+  },
+  "homepage": "https://github.com/eib/omw-client#readme",
+  "private": true,
+  "dependencies": {
+    "engine.io-client": "^1.5.1",
+    "socket.io-client": "^1.3.5"
+  }
+}
