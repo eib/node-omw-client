@@ -64,10 +64,12 @@ socket.on('error', function (err) {
   console.log('Error:', err.message || err);
 });
 
-process.on('exit', function () {
+process.on('SIGINT', function () {
+  console.log('Shutting down....');
   player.stop();
+  process.exit(2);
 });
 
-process.on('SIGINT', function () {
+process.on('exit', function () {
   player.stop();
 });
