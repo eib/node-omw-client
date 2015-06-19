@@ -63,3 +63,11 @@ socket.on('selectItem', function (data) {
 socket.on('error', function (err) {
   console.log('Error:', err.message || err);
 });
+
+process.on('exit', function () {
+  player.stop();
+});
+
+process.on('SIGINT', function () {
+  player.stop();
+});
