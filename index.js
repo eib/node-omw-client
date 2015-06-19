@@ -42,10 +42,10 @@ function register() {
     .then(registerItems);
 }
 
-function playItem(item) {
+function playItem(item, volumePercent) {
   var filePath = path.join(musicDir, item.id);
   console.log('Playing ' + filePath);
-  player.play(filePath);
+  player.play(filePath, volumePercent);
 }
 
 function stopPlaying() {
@@ -60,8 +60,9 @@ socket.on('connect', function () {
 });
 
 socket.on('selectItem', function (data) {
+  var volumePercent = Number(data.volumePercent) || 100;
   console.log('Selected:', JSON.stringify(data));
-  playItem(data.item);
+  playItem(data.item, volumePercent);
 });
 
 socket.on('stop', function (data) {
