@@ -48,6 +48,10 @@ function playItem(item) {
   player.play(filePath);
 }
 
+function stopPlaying() {
+  player.stop();
+}
+
 console.log('Opening ', url);
 
 socket.on('connect', function () {
@@ -58,6 +62,11 @@ socket.on('connect', function () {
 socket.on('selectItem', function (data) {
   console.log('Selected:', JSON.stringify(data));
   playItem(data.item);
+});
+
+socket.on('stop', function (data) {
+  console.log('Asked to stop.');
+  stopPlaying();
 });
 
 socket.on('error', function (err) {
