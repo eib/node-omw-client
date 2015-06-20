@@ -9,6 +9,10 @@ var path = require('path'),
   musicDir = (process.env.MUSIC_DIR || (__dirname + '/music')).trim(),
   socket = io.connect(url);
 
+console.log('REMOTE_URL: ' + url);
+console.log('SERVER_NAME: ' + name);
+console.log('MUSIC_DIR: ' + musicDir);
+
 function findFiles(pattern, workingDir) {
   console.log('Pattern: ', pattern);
   console.log('Dir: "' + workingDir + '"');
